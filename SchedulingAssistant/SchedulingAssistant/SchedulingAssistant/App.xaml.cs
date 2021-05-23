@@ -9,7 +9,7 @@ namespace SchedulingAssistant
         public App()
         {
             InitializeComponent();
-
+            NotesDB.OpenConnection();
             MainPage = new MainPage();
         }
 
