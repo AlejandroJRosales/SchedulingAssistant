@@ -1,4 +1,4 @@
-# GetItTogether
+# SchedulingAssitant
 This is a mobile app that uses a machine learning algorithm to find the optimal, logically sound schedule for the user. They can save the schedule, make notes for themselves on reminders, new ideas, or whatever they like. It works on iOS, Android, and Windows.
 
 The user inputs in date, time, and short memo about a task they want to do. Be it school related, work related, personal related, or those combined. 
