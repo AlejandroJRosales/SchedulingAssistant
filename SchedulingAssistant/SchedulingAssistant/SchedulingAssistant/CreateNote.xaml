@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SchedulingAssistant.CreateNote">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="#2e2c28"
+                     Spacing="0">
+
+            <!--The notepad-->
+            <!--Title-->
+            <Frame Padding="20, 0, 20, 0"
+                   Margin="30, 20, 30, 0"
+                   CornerRadius="0"
+                   BackgroundColor="#FFF8B1">
+                <Entry x:Name="titleEntry"
+                   Placeholder="Title"
+                   FontSize="30"
+                   BackgroundColor="#FFF8B1"/>
+            </Frame>
+
+            <!--Place to write note-->
+            <Frame Margin="30, 0, 30, 20"
+                   BackgroundColor="#FFF8B1"
+                   CornerRadius="0">
+                <Editor x:Name="bodyEntry"
+                        HeightRequest="250" />
+            </Frame>
+
+            <!--Button to add note to database-->
+            <Button Text="Create"
+                    Clicked="CreateClicked"
+                    Background="#FFB33E"
+                    Margin="30, 0, 30, 0"
+                    Padding="10, 0, 10, 0"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

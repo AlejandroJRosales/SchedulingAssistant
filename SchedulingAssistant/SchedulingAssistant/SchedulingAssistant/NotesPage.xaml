@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SchedulingAssistant.NotesPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Spacing="0">
+                <!--Labels for Portfolio balance-->
+                <Label Text="Notes"
+                       FontSize="30"
+                       HorizontalOptions="CenterAndExpand" />
+
+                <!--Draw the horizontal rule we made-->
+                <BoxView Margin="0, 0, 0, 14"/>
+
+                <Button Text="Options"
+                        x:Name="optionsButton"
+                        TextColor="Gray"
+                        BackgroundColor="#2e2c28"
+                        FontSize="15"
+                        HorizontalOptions="Start"
+                        Margin="20, 0, 0, 0"
+                        Clicked="OptionsClicked" />
+
+                <!--New note, edit note, and delete note buttons-->
+                <StackLayout x:Name="optionsButtonsStack" 
+                             Orientation="Horizontal"
+                             HorizontalOptions="CenterAndExpand" />
+
+                <StackLayout x:Name="notesStack" 
+                             Spacing="0"
+                             Margin="0, 0, 0, 40"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
