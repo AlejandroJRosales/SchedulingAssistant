@@ -17,18 +17,17 @@
                 <Setter Property="Margin" Value="10, 0, 10, 0" />
                 <Setter Property="HasShadow" Value="True" />
             </Style>
-            <Style TargetType="BoxView">
-                <Setter Property="VerticalOptions" Value="Center" />
-                <Setter Property="HorizontalOptions" Value="Center" />
-                <Setter Property="HeightRequest" Value="1" />
-                <Setter Property="WidthRequest" Value="350" />
-                <Setter Property="Color" Value="#5b5d68" />
-            </Style>
             <Style TargetType="StackLayout">
                 <Setter Property="BackgroundColor" Value="#2e2c28" />
             </Style>
             <Style TargetType="ScrollView">
                 <Setter Property="BackgroundColor" Value="#2e2c28" />
+            </Style>
+            <Style TargetType="Editor">
+                <Setter Property="PlaceholderColor" Value="#8B7134" />
+            </Style>
+            <Style TargetType="Entry">
+                <Setter Property="PlaceholderColor" Value="#8B7134" />
             </Style>
         </ResourceDictionary>
     </Application.Resources>

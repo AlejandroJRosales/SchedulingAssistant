@@ -3,10 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="SchedulingAssistant.AssistantPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+            <ScrollView>
+                <StackLayout x:Name="newTaskStack">
+                    <StackLayout x:Name="newTaskButtonsStack"
+                                 Margin="30, 0, 30, 0"/>
+                    <Button Text="New Task"
+                            x:Name="newTaskButton"
+                            FontSize="15"
+                            BackgroundColor="#FFB33E"
+                            Margin = "30, 20, 30, 0"
+                            Clicked="NewTaskClicked" />
+                </StackLayout>
+            </ScrollView>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

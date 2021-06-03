@@ -5,11 +5,13 @@
             BarBackgroundColor="#6F6F6F"
             BarTextColor="White"
              x:Class="SchedulingAssistant.MainPage">
-    <NavigationPage Title="Assistant">
+    <!--<NavigationPage Title="Assistant">
         <x:Arguments>
             <local:AssistantPage Title="Assistant" />
         </x:Arguments>
-    </NavigationPage>
+    </NavigationPage>-->
+
+    <local:AssistantPage Title="Assitant" />
 
     <!--Assistant Page-->
     <NavigationPage Title="Notes">

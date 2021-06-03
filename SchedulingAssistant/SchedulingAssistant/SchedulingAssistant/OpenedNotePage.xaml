@@ -31,14 +31,14 @@
                         Clicked="SubmitChangesClicked"
                         Background="#FFF8B1"
                         CornerRadius="0"
-                        WidthRequest="175"
+                        WidthRequest="176"
                         Margin="30, 0, 0, 0"
                         Padding="10, 0, 10, 0" />
                 <Button Text="Delete"
                         Clicked="DeleteNoteClicked"
                         Background="#FFF8B1"
                         CornerRadius="0"
-                        WidthRequest="176"
+                        WidthRequest="196"
                         Margin="0, 0, 30, 0"
                         Padding="10, 0, 10, 0" />
             </StackLayout>

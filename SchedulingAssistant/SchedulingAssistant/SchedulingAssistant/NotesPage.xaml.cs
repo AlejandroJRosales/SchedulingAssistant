@@ -152,7 +152,6 @@ namespace SchedulingAssistant
                 FontSize = 12,
                 BackgroundColor = Color.FromHex("#FFB33E"),
                 Margin = new Thickness(30, 0, 0, 0)
-                //Padding = new Thickness(25, 20, 25, 20)
             };
             newNoteButton.Clicked += NewNoteClicked;
 
@@ -161,7 +160,6 @@ namespace SchedulingAssistant
                 Text = "Refresh",
                 FontSize = 12,
                 BackgroundColor = Color.Gray,
-                //Padding = new Thickness(20, 0, 20, 0)
             };
             refreshButton.Clicked += ResetView;
         }
