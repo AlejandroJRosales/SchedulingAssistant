@@ -6,8 +6,8 @@
         <ScrollView>
             <ScrollView>
                 <StackLayout x:Name="newTaskStack">
-                    <StackLayout x:Name="newTaskButtonsStack"
-                                 Margin="30, 0, 30, 0"/>
+                    <StackLayout x:Name="newTaskInputStack"
+                                 Margin="30, 0, 30, 0" />
                     <Button Text="New Task"
                             x:Name="newTaskButton"
                             FontSize="15"

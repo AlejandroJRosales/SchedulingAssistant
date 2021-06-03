@@ -28,16 +28,17 @@ namespace SchedulingAssistant
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            ResetNotesStackLayout();
+            DisplayNotes();
         }
 
-        private void GenerateNoteView(NoteEntry note)
+        private async void GenerateNoteView(NoteEntry note)
         {
             titleFrame = new Frame
             {
                 Padding = new Thickness(20, 0, 20, 0),
                 Margin = new Thickness(30, 20, 30, 0),
-                BackgroundColor = Color.FromHex("#FFF8B1")
+                BackgroundColor = Color.FromHex("#FFF8B1"),
+                Opacity = 0
             };
 
             titleLabel = new Label
@@ -45,14 +46,16 @@ namespace SchedulingAssistant
                 Text = note.Title,
                 TextColor = Color.Black,
                 FontSize = 30,
-                BackgroundColor = Color.FromHex("#FFF8B1")
+                BackgroundColor = Color.FromHex("#FFF8B1"),
+                Opacity = 0
             };
 
             bodyLabel = new Label
             {
                 Text = note.Body,
                 TextColor = Color.Black,
-                BackgroundColor = Color.FromHex("#FFF8B1")
+                BackgroundColor = Color.FromHex("#FFF8B1"),
+                Opacity = 0
             };
 
             // label tap event
@@ -73,10 +76,14 @@ namespace SchedulingAssistant
             // set StackLayout in XAML to the class field
             parent = notesStack;
 
-            // add the new button to the StackLayout
+            // add the new note to the StackLayout
             parent.Children.Add(titleFrame);
             parent.Children.Add(titleLabel);
             parent.Children.Add(bodyLabel);
+
+            titleFrame.FadeTo(1, 1000);
+            titleLabel.FadeTo(1, 1000);
+            bodyLabel.FadeTo(1, 1000);
         }
 
         /**
@@ -91,6 +98,12 @@ namespace SchedulingAssistant
             {
                 GenerateNoteView(note);
             }
+        }
+
+        private async void DisplayNotes()
+        {
+            await Task.Delay(500);
+            ResetNotesStackLayout();
         }
 
         /**

@@ -31,22 +31,33 @@ namespace SchedulingAssistant
          */
         private void NewTaskClicked(object sender, EventArgs e)
         {
+            TaskInputAnimation();
+        }
+
+        private async void TaskInputAnimation()
+        {
             if (newTaskButton.Text == "New Task")
             {
                 newTaskButton.Text = "Cancel";
-                newTaskButtonsStack.Children.Clear();
-                newTaskButtonsStack.Children.Add(titleEditor);
-                newTaskButtonsStack.Children.Add(detailsEditor);
-                newTaskButtonsStack.Children.Add(weightEntry);
+                newTaskInputStack.Children.Add(titleEditor);
+                newTaskInputStack.Children.Add(detailsEditor);
+                newTaskInputStack.Children.Add(weightEntry);
                 newTaskStack.Children.Add(tempBoxView);
+                titleEditor.FadeTo(1, 2000);
+                detailsEditor.FadeTo(1, 2000);
+                weightEntry.FadeTo(1, 2000);
             }
 
             else
             {
                 newTaskButton.Text = "New Task";
-                newTaskButtonsStack.Children.Remove(titleEditor);
-                newTaskButtonsStack.Children.Remove(detailsEditor);
-                newTaskButtonsStack.Children.Remove(weightEntry);
+                titleEditor.FadeTo(0, 250);
+                detailsEditor.FadeTo(0, 250);
+                weightEntry.FadeTo(0, 250);
+                await Task.Delay(250);
+                newTaskInputStack.Children.Remove(titleEditor);
+                newTaskInputStack.Children.Remove(detailsEditor);
+                newTaskInputStack.Children.Remove(weightEntry);
                 newTaskStack.Children.Remove(tempBoxView);
             }
         }
@@ -65,7 +76,8 @@ namespace SchedulingAssistant
                 TextColor = Color.White,
                 Margin = new Thickness(0, 0, 0, 0),
                 AutoSize = EditorAutoSizeOption.TextChanges,
-                WidthRequest = 400
+                WidthRequest = 400,
+                Opacity = 0
             };
 
             detailsEditor = new Editor
@@ -75,7 +87,8 @@ namespace SchedulingAssistant
                 TextColor = Color.White,
                 Margin = new Thickness(0, 30, 0, 0),
                 AutoSize = EditorAutoSizeOption.TextChanges,
-                WidthRequest = 400
+                WidthRequest = 400,
+                Opacity = 0
             };
 
             weightEntry = new Entry
@@ -84,7 +97,8 @@ namespace SchedulingAssistant
                 FontSize = 20,
                 Keyboard = Keyboard.Numeric,
                 TextColor = Color.White,
-                Margin = new Thickness(0, 30, 200, 0)
+                Margin = new Thickness(0, 30, 200, 0),
+                Opacity = 0
             };
 
             tempBoxView = new BoxView
