@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Android.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,13 +22,40 @@ namespace SchedulingAssistant
             FillNoteView();
         }
 
+        //public override bool OnOptionsItemSelected(IMenuItem item)
+        //{
+        //    if (item.ItemId == 16908332)
+        //    {
+        //        OnBackButtonPressed();
+        //    }
+        //    return false;
+        //}
+
+        protected override bool OnBackButtonPressed() 
+        {
+            ShowExitDialog(); // Global current page instance
+            return false;
+        }
+
+        private async Task ShowExitDialog()
+        {
+            if (titleEntry.Text != oldNote.Title || bodyEditor.Text != oldNote.Body)
+            {
+                var exit = await DisplayAlert("Are you sure?", "You have unsaved changes", "Nope", "Yep!");
+                if (exit)
+                {
+                    this.Navigation.PopAsync();
+                }
+            }
+        }
+
         private void FillNoteView()
         {
             titleEntry.Text = oldNote.Title;
             bodyEditor.Text = oldNote.Body;
         }
 
-        private void SubmitChangesClicked(object buttonSender, EventArgs e)
+        private void SaveClicked(object buttonSender, EventArgs e)
         {
             NoteEntry newNote = new NoteEntry
             {

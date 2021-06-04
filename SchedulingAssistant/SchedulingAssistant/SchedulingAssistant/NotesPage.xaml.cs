@@ -44,6 +44,7 @@ namespace SchedulingAssistant
             titleLabel = new Label
             {
                 Text = note.Title,
+                MaxLines = 1,
                 TextColor = Color.Black,
                 FontSize = 30,
                 BackgroundColor = Color.FromHex("#FFF8B1"),
@@ -53,16 +54,17 @@ namespace SchedulingAssistant
             bodyLabel = new Label
             {
                 Text = note.Body,
+                MaxLines = 2,
                 TextColor = Color.Black,
                 BackgroundColor = Color.FromHex("#FFF8B1"),
                 Opacity = 0
             };
 
             // label tap event
-            var note_tap = new TapGestureRecognizer();
+            var noteTap = new TapGestureRecognizer();
             // when the user taps the title label or the body
             // label button, 
-            note_tap.Tapped += (s, e) =>
+            noteTap.Tapped += (s, e) =>
             {
                 Device.BeginInvokeOnMainThread(async () => {
                     OpenedNotePage openNotePage = new OpenedNotePage(note);
@@ -70,8 +72,8 @@ namespace SchedulingAssistant
                 });
             };
             // add the gesture recognizers to the note
-            bodyLabel.GestureRecognizers.Add(note_tap);
-            titleLabel.GestureRecognizers.Add(note_tap);
+            bodyLabel.GestureRecognizers.Add(noteTap);
+            titleLabel.GestureRecognizers.Add(noteTap);
 
             // set StackLayout in XAML to the class field
             parent = notesStack;
@@ -94,6 +96,7 @@ namespace SchedulingAssistant
         private void ResetNotesStackLayout()
         {
             notesStack.Children.Clear();
+            Task.Delay(480);
             foreach (NoteEntry note in NotesDB.conn.Table<NoteEntry>())
             {
                 GenerateNoteView(note);
@@ -102,7 +105,6 @@ namespace SchedulingAssistant
 
         private async void DisplayNotes()
         {
-            await Task.Delay(500);
             ResetNotesStackLayout();
         }
 

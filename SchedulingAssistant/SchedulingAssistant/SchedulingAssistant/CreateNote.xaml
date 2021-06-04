@@ -5,17 +5,20 @@
     <ContentPage.Content>
         <StackLayout BackgroundColor="#2e2c28"
                      Spacing="0">
-
+            <ScrollView>
+                
+            </ScrollView>
             <!--The notepad-->
             <!--Title-->
             <Frame Padding="20, 0, 20, 0"
                    Margin="30, 20, 30, 0"
                    CornerRadius="0"
                    BackgroundColor="#FFF8B1">
-                <Entry x:Name="titleEntry"
-                   Placeholder="Title"
-                   FontSize="30"
-                   BackgroundColor="#FFF8B1"/>
+                <Editor x:Name="titleEntry"
+                       Placeholder="Title"
+                       FontSize="30"
+                       BackgroundColor="#FFF8B1"
+                       AutoSize="TextChanges" />
             </Frame>
 
             <!--Place to write note-->

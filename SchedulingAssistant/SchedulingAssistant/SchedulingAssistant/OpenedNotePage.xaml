@@ -11,9 +11,10 @@
                    Margin="30, 20, 30, 0"
                    CornerRadius="0"
                    BackgroundColor="#FFF8B1">
-                <Entry x:Name="titleEntry"
+                <Editor x:Name="titleEntry"
                    FontSize="30"
-                   BackgroundColor="#FFF8B1"/>
+                   BackgroundColor="#FFF8B1" 
+                   AutoSize="TextChanges" />
             </Frame>
 
             <!--Place to write note-->
@@ -27,8 +28,8 @@
             <StackLayout Orientation="Horizontal"
                          Spacing="0">
                 <!--Button to submit changes-->
-                <Button Text="Submit Changes"
-                        Clicked="SubmitChangesClicked"
+                <Button Text="Save"
+                        Clicked="SaveClicked"
                         Background="#FFF8B1"
                         CornerRadius="0"
                         WidthRequest="176"
